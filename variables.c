@@ -40,7 +40,7 @@ int is_chain(info_t *info, char *buf, size_t *p)
  * @info: the parameter struct
  * @buf: the char buffer
  * @p: address of current position
- * @i: starting position 
+ * @i: starting position
  * @len: length of buf
  * Return: always 0
  */
