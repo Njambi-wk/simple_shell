@@ -1,30 +1,54 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
+#include "shell.h"
 
-#define MAX_COMMAND_LENGTH 100
 
-int main()
+char *_strncpy(char *dest, char *src, int i)
 {
-    char command[MAX_COMMAND_LENGTH];
+	int n;
+	char *s = dest;
+	int m = 0;
 
-    while (1)
- {
-        printf("Simple_Shell > ");
-
-        fgets(command, sizeof(command), stdin);
-
-        command[strcspn(command, "\n")] = '\0';
-
-        if (strcmp(command, "exit") == 0)
+	while (src[m] != '\0' && m < m - 1)
 	{
-            printf("Exit shell:\n");
-            break;
-        }
-	else 
-	{   
-            system(command);
-        }
-    }
-    return 0;
+		dest[m] = src[m];
+		m++;
+	}
+	if (m < i)
+	{
+		n = m;
+		while (n < i)
+		{
+			dest[n] = '\0';
+			n++;
+		}
+	}
+	return (s);
+}
+
+char *_strncat(char *dest, char *src, int i)
+{
+	int m = 0;
+        int n = 0;
+	char *s = dest;
+
+	while (dest[m] != '\0')
+		m++;
+	while (src[n] != '\0' && n < i)
+	{
+		dest[m] = src[n];
+		m++;
+		n++;
+	}
+	if (n < i)
+		dest[m] = '\0';
+	return (s);
+}
+
+char *_strchr(char *s, char c)
+{
+	do {
+		if (*s == c)
+			return (s);
+	} while (*s++ != '\0');
+
+	return (NULL);
 }
