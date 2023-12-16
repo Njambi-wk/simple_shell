@@ -1,6 +1,12 @@
 #include "shell.h"
 #include <stdio.h>
 #include <stdlib.h>
+/**
+ * main - entry point
+ * @arg_count: argument count
+ * @arg_val: argument values
+ * Return: 0 on success, 1 otherwise
+ */
 
 int main(int arg_count, char **arg_val)
 {
