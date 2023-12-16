@@ -1,45 +1,46 @@
 #include "shell.h"
+#include <stdio.h>
 
-
-char *_strncpy(char *dest, char *src, int i)
+char *_strncpy(char *dest, char *src, int n)
 {
-	int n;
+	int i, j;
 	char *s = dest;
-	int m = 0;
 
-	while (src[m] != '\0' && m < m - 1)
+	i = 0;
+	while (src[i] != '\0' && i < n - 1)
 	{
-		dest[m] = src[m];
-		m++;
+		dest[i] = src[i];
+		i++;
 	}
-	if (m < i)
+	if (i < n)
 	{
-		n = m;
-		while (n < i)
+		j = i;
+		while (j < n)
 		{
-			dest[n] = '\0';
-			n++;
+			dest[j] = '\0';
+			j++;
 		}
 	}
 	return (s);
 }
 
-char *_strncat(char *dest, char *src, int i)
+char *_strncat(char *dest, char *src, int n)
 {
-	int m = 0;
-        int n = 0;
+	int i, j;
 	char *s = dest;
 
-	while (dest[m] != '\0')
-		m++;
-	while (src[n] != '\0' && n < i)
+	i = 0;
+	j = 0;
+	while (dest[i] != '\0')
+		i++;
+	while (src[j] != '\0' && j < n)
 	{
-		dest[m] = src[n];
-		m++;
-		n++;
+		dest[i] = src[j];
+		i++;
+		j++;
 	}
-	if (n < i)
-		dest[m] = '\0';
+	if (j < n)
+		dest[i] = '\0';
 	return (s);
 }
 
